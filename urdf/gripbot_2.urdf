@@ -1,0 +1,875 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 0.7 -->
+<robot name="gripbot">
+
+  <link name="dummy_link"/>
+
+  <link name="arm_visual_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="19.56717"/>
+      <inertia ixx="0.503760" ixy="0" ixz="0" iyy="0.07578849" iyz="0" izz="0.50375514"/>
+    </inertial>
+    <visual name="arm_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/ID36.001.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Color_A05"/>
+    </visual>
+    <collision name="gripbot::arm_visual">
+      <origin xyz="-0.00265 -0.19123 0.0002" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.15244 0.53451 0.15245"/>
+      </geometry>
+    </collision>
+    <collision name="gripbot::girdle_receptor_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.18304 0.15204 0.15204"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="base_column_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="33.204"/>
+      <inertia ixx="0.17785" ixy="0" ixz="0" iyy="0.15673" iyz="0" izz="0.156739"/>
+    </inertial>
+    <visual name="base_column_receptor_visual">
+      <origin xyz="0 -0.07833 0.30885" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/Circle.002.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Color_A05"/>
+    </visual>
+    <visual name="base_column_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/Circle.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Color_M07"/>
+    </visual>
+    <collision name="gripbot::base_column_mount_visual">
+      <origin xyz="0 -0.07833 0.30885" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.15655 0.17927 0.17927"/>
+      </geometry>
+    </collision>
+    <collision name="gripbot::base_column_visual">
+      <origin xyz="0 0 0.15275" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.15423 0.15423 0.30549"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="base_mount_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="240"/>
+      <inertia ixx="2.4213" ixy="0" ixz="0" iyy="2.4213" iyz="0" izz="4.76351"/>
+    </inertial>
+    <visual name="base_mount_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/Circle.004.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Color_M07"/>
+    </visual>
+    <collision name="gripbot::base_mount_visual">
+      <origin xyz="0 0 -0.01433" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.4898 0.4898 0.0631"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="forearm_visual_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="9.055067"/>
+      <inertia ixx="0.067333" ixy="0" ixz="0" iyy="0.0673332" iyz="0" izz="0.028292"/>
+    </inertial>
+    <visual name="forearm_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/ID82.001.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Color_M07"/>
+    </visual>
+    <collision name="forearm_collision">
+      <origin xyz="0 -0.1324 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.07905" length="0.26549"/>
+      </geometry>
+    </collision>
+    <collision name="forearm_mount_collision">
+      <origin xyz="0 0 0" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.0665" length="0.17955"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="girdle_visual_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="8.62636"/>
+      <inertia ixx="0.085577" ixy="0" ixz="0" iyy="0.085577" iyz="0" izz="0.034199"/>
+    </inertial>
+    <visual name="girdle_mount_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/Circle.005.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Color_A05"/>
+    </visual>
+    <visual name="girdle_receptor_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/Circle.001.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Color_A05"/>
+    </visual>
+    <visual name="girdle_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/Circle.003.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Color_A05"/>
+    </visual>
+    <collision name="gripbot::girdle_visual">
+      <origin xyz="0 0 0.19929" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.15423 0.15423 0.30864"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <link name="base_wrist_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="3.6"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual name="base_link_socket_visual">
+      <origin xyz="-0.00011 -0.00716 4e-05" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/Palm.001.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <visual name="base_link_visual">
+      <origin xyz="-0.00011 -0.00716 4e-05" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/Palm.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="base_link_collision">
+      <origin xyz="-0.00011 -0.00716 4e-05" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1135 0.07446 0.07319"/>
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_1">
+      <origin xyz="-0.00011 -0.04313 0.01634" rpy="-1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.04771" length="0.074303"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="finger_1_base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1010"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual name="finger_1_base_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/FingerBase.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="finger_2_base_collision">
+      <origin xyz="0 0 0" rpy="-1.5708 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.010094" length="0.034775"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="finger_1_distal_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.101"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual name="finger_1_distal_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/FingerDistal.001.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="finger_1_distal_collision">
+      <origin xyz="0 -0.00197 -0.029" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0175 0.02023 0.04043"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="finger_1_mid_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.101"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual name="finger_1_mid_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/Cube.020.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="finger_1_mid_collision">
+      <origin xyz="0 -0.00096 -0.02551" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01784 0.01899 0.03309"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="finger_1_proximal_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.101"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual name="finger_1_proximal_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/FingerProximal.001.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="finger_1_proximal_collision">
+      <origin xyz="0 0 -0.03" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01754 0.01751 0.05287"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="finger_2_base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.101"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual name="finger_2_base_visual">
+      <origin xyz="0 0 0" rpy="-1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/FingerBase.001.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="finger_2_base_collision">
+      <origin xyz="0 0 0" rpy="-1.5708 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.010094" length="0.034775"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="finger_2_distal_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.101"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual name="finger_2_distal_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/FingerDistal.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="finger_2_distal_collision">
+      <origin xyz="0 -0.00197 -0.02913" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0175 0.02023 0.04043"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="finger_2_mid_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.101"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual name="finger_2_mid_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/Cube.016.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="finger_2_mid_collision">
+      <origin xyz="0 0 -0.02551" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01784 0.01899 0.03281"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="finger_2_proximal_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.101"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual name="finger_2_proximal_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/FingerProximal.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="finger_2_proximal_collision">
+      <origin xyz="0 0 -0.03" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01754 0.01751 0.05287"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="finger_3_distal_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.101"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual name="finger_3_distal_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/FingerDistal.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="finger_3_distal_collision">
+      <origin xyz="0 -0.00197 -0.02913" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0175 0.02023 0.04043"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="finger_3_mid_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.101"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual name="finger_3_mid_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/Cube.016.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="finger_3_mid_collision">
+      <origin xyz="0 -0.00096 -0.02551" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01784 0.01899 0.03281"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="finger_3_proximal_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.101"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual name="finger_3_proximal_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gripbot_description/meshes/stl/FingerProximal.003.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision name="finger_3_base_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03477 0.02019 0.02019"/>
+      </geometry>
+    </collision>
+    <collision name="finger_3_proximal">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01755 0.01858 0.05311"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint name = "dummy_joint" type="fixed">
+    <parent link = "dummy_link"/>
+    <child link = "base_mount_link"/>
+  </joint>
+
+  <joint name="arm_visual_link" type="revolute">
+    <origin xyz="0 -0.06624 0.34976" rpy="0 0 0"/>
+    <parent link="girdle_visual_link"/>
+    <child link="arm_visual_link"/>
+    <axis xyz="1.0 0 0"/>
+    <limit lower="-1.5708" upper="0.59341" effort="135.0" velocity="6.28319"/>
+  </joint>
+
+  <joint name="base_column_link" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="base_mount_link"/>
+    <child link="base_column_link"/>
+    <axis xyz="0 0 1.0"/>
+    <limit lower="-3.14159" upper="3.14159" effort="135.0" velocity="6.28319"/>
+  </joint>
+
+  <joint name="base_wrist_link" type="revolute">
+    <origin xyz="0 -0.2659 0" rpy="0 0 0"/>
+    <parent link="forearm_visual_link"/>
+    <child link="base_wrist_link"/>
+    <axis xyz="0 -1.0 0"/>
+    <limit lower="-1.5708" upper="1.5708" effort="10000.0" velocity="6.00"/>
+  </joint>
+
+  <joint name="finger_1_base_link" type="revolute">
+    <origin xyz="-0.03075 -0.07079 -0.03799" rpy="0 0 0"/>
+    <parent link="base_wrist_link"/>
+    <child link="finger_1_base_link"/>
+    <axis xyz="0 -1.0 0"/>
+    <limit lower="-2.04204" upper="0.7854" effort="10000.0" velocity="60000"/>
+  </joint>
+
+  <joint name="finger_1_distal_link" type="revolute">
+    <origin xyz="0 -0.00041 -0.04213" rpy="0 0 0"/>
+    <parent link="finger_1_mid_link"/>
+    <child link="finger_1_distal_link"/>
+    <axis xyz="-1.0 0 0"/>
+    <limit lower="0" upper="1.5708" effort="10000.0" velocity="60000"/>
+  </joint>
+
+  <joint name="finger_1_mid_link" type="revolute">
+    <origin xyz="0 0.00425 -0.06051" rpy="0 0 0"/>
+    <parent link="finger_1_proximal_link"/>
+    <child link="finger_1_mid_link"/>
+    <axis xyz="-1.0 0 0"/>
+    <limit lower="0" upper="1.5708" effort="10000.0" velocity="60000"/>
+  </joint>
+
+  <joint name="finger_1_proximal_link" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="finger_1_base_link"/>
+    <child link="finger_1_proximal_link"/>
+    <axis xyz="-1.0 0 0"/>
+    <limit lower="0" upper="1.5708" effort="10000.0" velocity="60000"/>
+  </joint>
+
+   <joint name="finger_2_base_link" type="revolute">
+    <origin xyz="0.03075 -0.07079 -0.03799" rpy="0 0 0"/>
+    <parent link="base_wrist_link"/>
+    <child link="finger_2_base_link"/>
+    <axis xyz="0 -1.0 0"/>
+    <limit lower="-0.7854" upper="2.04204" effort="10000.0" velocity="60000"/>
+  </joint>
+
+  <joint name="finger_2_distal_link" type="revolute">
+    <origin xyz="0 -0.00041 -0.04199" rpy="0 0 0"/>
+    <parent link="finger_2_mid_link"/>
+    <child link="finger_2_distal_link"/>
+    <axis xyz="1.0 0 0"/>
+    <limit lower="-1.5708" upper="0" effort="10000.0" velocity="60000"/>
+  </joint>
+
+  <joint name="finger_2_mid_link" type="revolute">
+    <origin xyz="0 0.00425 -0.06051" rpy="0 0 0"/>
+    <parent link="finger_2_proximal_link"/>
+    <child link="finger_2_mid_link"/>
+    <axis xyz="1.0 0 0"/>
+    <limit lower="-1.5708" upper="0" effort="10000.0" velocity="60000"/>
+  </joint>
+
+  <joint name="finger_2_proximal_link" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="finger_2_base_link"/>
+    <child link="finger_2_proximal_link"/>
+    <axis xyz="1.0 0 0"/>
+    <limit lower="-1.5708" upper="0" effort="10000.0" velocity="60000"/>
+  </joint>
+
+  <joint name="finger_3_distal_link" type="revolute">
+    <origin xyz="0 -0.00041 0.04199" rpy="0 0 0"/>
+    <parent link="finger_3_mid_link"/>
+    <child link="finger_3_distal_link"/>
+    <axis xyz="1.0 0 0"/>
+    <limit lower="0" upper="1.72788" effort="10000.0" velocity="60000"/>
+  </joint>
+
+  <joint name="finger_3_mid_link" type="revolute">
+    <origin xyz="0 -0.00041 0.06051" rpy="0 0 0"/>
+    <parent link="finger_3_proximal_link"/>
+    <child link="finger_3_mid_link"/>
+    <axis xyz="1.0 0 0"/>
+    <limit lower="0" upper="1.72788" effort="10000.0" velocity="60000"/>
+  </joint>
+
+  <joint name="finger_3_proximal_link" type="revolute">
+    <origin xyz="-0.00025 -0.0808 0.03801" rpy="0 0 0"/>
+    <parent link="base_wrist_link"/>
+    <child link="finger_3_proximal_link"/>
+    <axis xyz="1.0 0 0"/>
+    <limit lower="-0.7854" upper="1.72788" effort="10000.0" velocity="60000"/>
+  </joint>
+
+  <joint name="forearm_visual_link" type="revolute">
+    <origin xyz="-0.00268 -0.39555 -0.0001" rpy="0 0 0"/>
+    <parent link="arm_visual_link"/>
+    <child link="forearm_visual_link"/>
+    <axis xyz="1.0 0 0"/>
+    <limit lower="-1.5708" upper="2.18166" effort="135.0" velocity="60000.28319"/>
+  </joint>
+
+  <joint name="girdle_visual_link" type="revolute">
+    <origin xyz="0 -0.07833 0.30885" rpy="0 0 0"/>
+    <parent link="base_column_link"/>
+    <child link="girdle_visual_link"/>
+    <axis xyz="1.0 0 0"/>
+    <limit lower="-0.5236" upper="1.95477" effort="50000.0" velocity="6000.0"/>
+  </joint>
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/gripbot</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+  <material name="Color_A05">
+    <color rgba="1.0 0 0 1.0"/>
+  </material>
+
+  <material name="Color_M07">
+    <color rgba="0.22745 0.22745 0.22745 1.0"/>
+  </material>
+
+  <transmission name="trans_arm_visual_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="arm_visual_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="arm_visual_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_base_column_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_column_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_column_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_base_wrist_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_wrist_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_wrist_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_finger_1_base_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="finger_1_base_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="finger_1_base_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_finger_1_distal_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="finger_1_distal_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="finger_1_distal_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_finger_1_mid_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="finger_1_mid_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="finger_1_mid_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_finger_1_proximal_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="finger_1_proximal_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="finger_1_proximal_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_finger_2_base_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="finger_2_base_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="finger_2_base_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_finger_2_distal_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="finger_2_distal_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="finger_2_distal_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_finger_2_mid_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="finger_2_mid_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="finger_2_mid_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_finger_2_proximal_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="finger_2_proximal_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="finger_2_proximal_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_finger_3_distal_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="finger_3_distal_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="finger_3_distal_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_finger_3_mid_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="finger_3_mid_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="finger_3_mid_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_finger_3_proximal_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="finger_3_proximal_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="finger_3_proximal_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_forearm_visual_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="forearm_visual_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="forearm_visual_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="trans_girdle_visual_link">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="girdle_visual_link">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="girdle_visual_link_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- girdle_visual_link transmission interface -->
+
+  <gazebo reference="base_mount_link">
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="dummy_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="arm_visual_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="base_column_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="base_mount_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <gazebo reference="base_wrist_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="finger_1_base_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="finger_1_distal_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="finger_1_mid_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="finger_1_proximal_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+   <gazebo reference="finger_2_base_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="finger_2_distal_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="finger_2_mid_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="finger_2_proximal_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+ <gazebo reference="finger_3_base_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="finger_3_distal_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="finger_3_mid_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="finger_3_proximal_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+
+  <gazebo reference="forearm_visual_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="girdle_visual_link">
+    <mu1 value="500.0"/>
+    <kp value="1000.00"/>
+    <kd value="10.0"/>
+    <static>true</static>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+</robot>
