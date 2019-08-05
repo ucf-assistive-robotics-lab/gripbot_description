@@ -47,15 +47,16 @@
   <param name="/robot_description" textfile="$(find gripbot_description)/urdf/gripbot_2.urdf" />
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
-  <node name="urdf_spawner" 
+  <node name="urdf_spawner"    
     pkg="gazebo_ros" 
     type="spawn_model" 
     args="-z 0.01 -unpause -urdf -model gripbot -param /robot_description" 
     respawn="false" 
     output="screen" />
 
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" ns="/gripbot">
     <param name="publish_frequency" type="double" value="30.0" />
+    <!-- param name="tf_prefix" type="string" value="/gripbot" /-->
   </node> 
 
 </launch>
