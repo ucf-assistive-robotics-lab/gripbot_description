@@ -1,0 +1,1100 @@
+<sdf version='1.6'>
+  <model name='gripbot'>
+    <link name='dummy_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>240</mass>
+        <inertia>
+          <ixx>2.4213</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.4213</iyy>
+          <iyz>0</iyz>
+          <izz>4.76351</izz>
+        </inertia>
+      </inertial>
+      <collision name='dummy_link_fixed_joint_lump__gripbot::base_mount_visual_collision'>
+        <pose frame=''>0 0 -0.01433 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.4898 0.4898 0.0631</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='dummy_link_fixed_joint_lump__base_mount_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/Circle.004.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay/>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <link name='base_column_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>33.204</mass>
+        <inertia>
+          <ixx>0.17785</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.15673</iyy>
+          <iyz>0</iyz>
+          <izz>0.156739</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_column_link_fixed_joint_lump__gripbot::base_column_mount_visual_collision'>
+        <pose frame=''>0 -0.07833 0.30885 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15655 0.17927 0.17927</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='base_column_link_fixed_joint_lump__gripbot::base_column_visual_collision_1'>
+        <pose frame=''>0 0 0.15275 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15423 0.15423 0.30549</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='base_column_link_fixed_joint_lump__base_column_receptor_visual_visual'>
+        <pose frame=''>0 -0.07833 0.30885 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/Circle.002.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_column_link_fixed_joint_lump__base_column_visual_visual_1'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/Circle.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='base_column_link' type='revolute'>
+      <child>base_column_link</child>
+      <parent>dummy_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>135</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='girdle_visual_link'>
+      <pose frame=''>0 -0.07833 0.30885 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>8.62636</mass>
+        <inertia>
+          <ixx>0.085577</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.085577</iyy>
+          <iyz>0</iyz>
+          <izz>0.034199</izz>
+        </inertia>
+      </inertial>
+      <collision name='girdle_visual_link_fixed_joint_lump__gripbot::girdle_visual_collision'>
+        <pose frame=''>0 0 0.19929 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15423 0.15423 0.30864</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='girdle_visual_link_fixed_joint_lump__girdle_mount_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/Circle.005.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='girdle_visual_link_fixed_joint_lump__girdle_receptor_visual_visual_1'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/Circle.001.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='girdle_visual_link_fixed_joint_lump__girdle_visual_visual_2'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/Circle.003.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='girdle_visual_link' type='revolute'>
+      <child>girdle_visual_link</child>
+      <parent>base_column_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.5236</lower>
+          <upper>1.95477</upper>
+          <effort>50000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='arm_visual_link'>
+      <pose frame=''>0 -0.14457 0.65861 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>19.5672</mass>
+        <inertia>
+          <ixx>0.50376</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0757885</iyy>
+          <iyz>0</iyz>
+          <izz>0.503755</izz>
+        </inertia>
+      </inertial>
+      <collision name='arm_visual_link_fixed_joint_lump__gripbot::arm_visual_collision'>
+        <pose frame=''>-0.00265 -0.19123 0.0002 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15244 0.53451 0.15245</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='arm_visual_link_fixed_joint_lump__gripbot::girdle_receptor_visual_collision_1'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.18304 0.15204 0.15204</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='arm_visual_link_fixed_joint_lump__arm_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/ID36.001.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='arm_visual_link' type='revolute'>
+      <child>arm_visual_link</child>
+      <parent>girdle_visual_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>0.59341</upper>
+          <effort>135</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='forearm_visual_link'>
+      <pose frame=''>-0.00268 -0.54012 0.65851 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>9.05507</mass>
+        <inertia>
+          <ixx>0.067333</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0673332</iyy>
+          <iyz>0</iyz>
+          <izz>0.028292</izz>
+        </inertia>
+      </inertial>
+      <collision name='forearm_visual_link_fixed_joint_lump__forearm_collision_collision'>
+        <pose frame=''>0 -0.1324 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.26549</length>
+            <radius>0.07905</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='forearm_visual_link_fixed_joint_lump__forearm_mount_collision_collision_1'>
+        <pose frame=''>0 0 0 1.5708 -0 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.17955</length>
+            <radius>0.0665</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='forearm_visual_link_fixed_joint_lump__forearm_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/ID82.001.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='forearm_visual_link' type='revolute'>
+      <child>forearm_visual_link</child>
+      <parent>arm_visual_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>2.18166</upper>
+          <effort>135</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='base_wrist_link'>
+      <pose frame=''>-0.00268 -0.80602 0.65851 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>3.6</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_wrist_link_fixed_joint_lump__base_link_collision_collision'>
+        <pose frame=''>-0.00011 -0.00716 4e-05 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1135 0.07446 0.07319</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='base_wrist_link_fixed_joint_lump__base_link_collision_1_collision_1'>
+        <pose frame=''>-0.00011 -0.04313 0.01634 -1.5708 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074303</length>
+            <radius>0.04771</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='base_wrist_link_fixed_joint_lump__base_link_socket_visual_visual'>
+        <pose frame=''>-0.00011 -0.00716 4e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/Palm.001.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_wrist_link_fixed_joint_lump__base_link_visual_visual_1'>
+        <pose frame=''>-0.00011 -0.00716 4e-05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/Palm.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='base_wrist_link' type='revolute'>
+      <child>base_wrist_link</child>
+      <parent>forearm_visual_link</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>10000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='finger_1_base_link'>
+      <pose frame=''>-0.03343 -0.87681 0.62052 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.101</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='finger_1_base_link_fixed_joint_lump__finger_2_base_collision_collision'>
+        <pose frame=''>0 0 0 -1.5708 0 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.034775</length>
+            <radius>0.010094</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='finger_1_base_link_fixed_joint_lump__finger_1_base_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/FingerBase.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='finger_1_base_link' type='revolute'>
+      <child>finger_1_base_link</child>
+      <parent>base_wrist_link</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-2.04204</lower>
+          <upper>0.7854</upper>
+          <effort>10000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='finger_1_proximal_link'>
+      <pose frame=''>-0.03343 -0.87681 0.62052 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.101</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='finger_1_proximal_link_fixed_joint_lump__finger_1_proximal_collision_collision'>
+        <pose frame=''>0 0 -0.03 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01754 0.01751 0.05287</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='finger_1_proximal_link_fixed_joint_lump__finger_1_proximal_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/FingerProximal.001.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='finger_1_proximal_link' type='revolute'>
+      <child>finger_1_proximal_link</child>
+      <parent>finger_1_base_link</parent>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>10000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='finger_1_mid_link'>
+      <pose frame=''>-0.03343 -0.87256 0.56001 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.101</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='finger_1_mid_link_fixed_joint_lump__finger_1_mid_collision_collision'>
+        <pose frame=''>0 -0.00096 -0.02551 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01784 0.01899 0.03309</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='finger_1_mid_link_fixed_joint_lump__finger_1_mid_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/FingerMid.001.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='finger_1_mid_link' type='revolute'>
+      <child>finger_1_mid_link</child>
+      <parent>finger_1_proximal_link</parent>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>10000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='finger_1_distal_link'>
+      <pose frame=''>-0.03343 -0.87297 0.51788 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.101</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='finger_1_distal_link_fixed_joint_lump__finger_1_distal_collision_collision'>
+        <pose frame=''>0 -0.00197 -0.029 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0175 0.02023 0.04043</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='finger_1_distal_link_fixed_joint_lump__finger_1_distal_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/FingerDistal.001.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='finger_1_distal_link' type='revolute'>
+      <child>finger_1_distal_link</child>
+      <parent>finger_1_mid_link</parent>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>10000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='finger_2_base_link'>
+      <pose frame=''>0.02807 -0.87681 0.62052 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.101</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='finger_2_base_link_fixed_joint_lump__finger_2_base_collision_collision'>
+        <pose frame=''>0 0 0 -1.5708 0 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.034775</length>
+            <radius>0.010094</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='finger_2_base_link_fixed_joint_lump__finger_2_base_visual_visual'>
+        <pose frame=''>0 0 0 -1.5708 0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/FingerBase.001.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='finger_2_base_link' type='revolute'>
+      <child>finger_2_base_link</child>
+      <parent>base_wrist_link</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.7854</lower>
+          <upper>2.04204</upper>
+          <effort>10000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='finger_2_proximal_link'>
+      <pose frame=''>0.02807 -0.87681 0.62052 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.101</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='finger_2_proximal_link_fixed_joint_lump__finger_2_proximal_collision_collision'>
+        <pose frame=''>0 0 -0.03 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01754 0.01751 0.05287</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='finger_2_proximal_link_fixed_joint_lump__finger_2_proximal_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/FingerProximal.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='finger_2_proximal_link' type='revolute'>
+      <child>finger_2_proximal_link</child>
+      <parent>finger_2_base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>0</upper>
+          <effort>10000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='finger_2_mid_link'>
+      <pose frame=''>0.02807 -0.87256 0.56001 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.101</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='finger_2_mid_link_fixed_joint_lump__finger_2_mid_collision_collision'>
+        <pose frame=''>0 0 -0.02551 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01784 0.01899 0.03281</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='finger_2_mid_link_fixed_joint_lump__finger_2_mid_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/FingerMid.002.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='finger_2_mid_link' type='revolute'>
+      <child>finger_2_mid_link</child>
+      <parent>finger_2_proximal_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>0</upper>
+          <effort>10000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='finger_2_distal_link'>
+      <pose frame=''>0.02807 -0.87297 0.51802 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.101</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='finger_2_distal_link_fixed_joint_lump__finger_2_distal_collision_collision'>
+        <pose frame=''>0 -0.00197 -0.02913 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0175 0.02023 0.04043</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='finger_2_distal_link_fixed_joint_lump__finger_2_distal_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/FingerDistal.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='finger_2_distal_link' type='revolute'>
+      <child>finger_2_distal_link</child>
+      <parent>finger_2_mid_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>0</upper>
+          <effort>10000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='finger_3_proximal_link'>
+      <pose frame=''>-0.00293 -0.88682 0.69652 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.101</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='finger_3_proximal_link_fixed_joint_lump__finger_3_base_collision_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.03477 0.02019 0.02019</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='finger_3_proximal_link_fixed_joint_lump__finger_3_proximal_collision_1'>
+        <pose frame=''>0 0 0.0275 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01755 0.01858 0.05311</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='finger_3_proximal_link_fixed_joint_lump__finger_3_proximal_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/FingerProximal.003.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='finger_3_proximal_link' type='revolute'>
+      <child>finger_3_proximal_link</child>
+      <parent>base_wrist_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.7854</lower>
+          <upper>1.72788</upper>
+          <effort>10000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='finger_3_mid_link'>
+      <pose frame=''>-0.00293 -0.88723 0.75703 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.101</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='finger_3_mid_link_fixed_joint_lump__finger_3_mid_collision_collision'>
+        <pose frame=''>0 -0.00096 0.02551 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01784 0.01899 0.03281</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='finger_3_mid_link_fixed_joint_lump__finger_3_mid_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/FingerMid.003.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='finger_3_mid_link' type='revolute'>
+      <child>finger_3_mid_link</child>
+      <parent>finger_3_proximal_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.72788</upper>
+          <effort>10000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='finger_3_distal_link'>
+      <pose frame=''>-0.00293 -0.88764 0.79902 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.101</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='finger_3_distal_link_fixed_joint_lump__finger_3_distal_collision_collision'>
+        <pose frame=''>0 -0.00197 0.02913 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0175 0.02023 0.04043</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='finger_3_distal_link_fixed_joint_lump__finger_3_distal_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/ynki9/Dev/catkin/src/gripbot_description/meshes/stl/FingerDistal.003.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>0</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='finger_3_distal_link' type='revolute'>
+      <child>finger_3_distal_link</child>
+      <parent>finger_3_mid_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.72788</upper>
+          <effort>10000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <static>0</static>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/gripbot</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>1</legacyModeNS>
+    </plugin>
+  </model>
+</sdf>
